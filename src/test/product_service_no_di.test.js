@@ -1,4 +1,5 @@
 //Mock 을 남용하는 사례
+
 //ProductClient는 네트워크 통신을하는데, ProductService에서 ProductClient를 실행하며 나오는 테스트 에러를
 //확인하기가 어렵다. 그래서 ProductClient를 Mock으로 만든다.
 
@@ -11,12 +12,12 @@
 
 const ProductService = require("../product_service_no_di.js");
 const ProductClient = require("../product_client.js");
-jest.mock("../product_client.js");
+jest.mock("../product_client.js"); //모듈 전체를 Mock처리
 
 describe("productServie", () => {
   //비동기로 동작하는 mock 함수
   //fetchItems를 호출하면 값을 리턴함.
-  const fetchItems = jest.fn(async () => [
+  const fetchItems = jest.fn(async () => [ //원하는 함수를 mock 처리
     { item: "Milk", available: true },
     { item: "Coffee", available: false },
   ]);
