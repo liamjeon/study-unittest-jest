@@ -15,7 +15,7 @@ describe("Stack", () => {
     it("push", () => {
       stack.push(3);
       expect(stack.size()).toBe(1);
-      expect(stack.arr[0]).toBe(3);
+      expect(stack.pop()).toBe(3);
     });
   });
 
