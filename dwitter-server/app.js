@@ -33,7 +33,7 @@ app.use((error, req, res, next) => {
 });
 
 sequelize.sync().then(() => {
-  console.log('Server is started....');
+  console.log('Server is started!');
   const server = app.listen(config.port);
   initSocket(server);
 });

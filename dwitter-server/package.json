@@ -5,7 +5,7 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "cross-env DOTENV_CONFIG_PATH=./.env.test jest --watchAll",
     "start": "nodemon app"
   },
   "author": "Dream Coding Academy",
@@ -17,6 +17,7 @@
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
     "express-validator": "^6.11.1",
+    "faker": "^5.5.3",
     "helmet": "^4.6.0",
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",
@@ -25,6 +26,11 @@
     "socket.io": "^4.1.2"
   },
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.16.5",
+    "@types/jest": "^27.0.3",
+    "cross-env": "^7.0.3",
+    "jest": "^27.4.5",
+    "node-mocks-http": "^1.11.0",
     "nodemon": "^2.0.7"
   }
 }
