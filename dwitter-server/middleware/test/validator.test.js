@@ -15,7 +15,7 @@ describe("Validator Middleware", () => {
     const next = jest.fn();
     validator.validationResult = jest.fn(() => ({ isEmpty: () => true }));
 
-    validate(request, response, next);
+    validate(request, response, next); 
 
     expect(next).toBeCalled();
   });
