@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/39</span>
+                <span class='fraction'>39/39</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/39</span>
+                <span class='fraction'>39/39</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -102,84 +102,84 @@
 <a name='L37'></a><a href='#L37'>37</a>
 <a name='L38'></a><a href='#L38'>38</a>
 <a name='L39'></a><a href='#L39'>39</a>
-<a name='L40'></a><a href='#L40'>40</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import express from "express";</span></span></span>
-<span class="cstat-no" title="statement not covered" >import "express-async-errors";</span>
-<span class="cstat-no" title="statement not covered" >import { body } from "express-validator";</span>
-<span class="cstat-no" title="statement not covered" >import { isAuth } from "../middleware/auth.js";</span>
-<span class="cstat-no" title="statement not covered" >import { validate } from "../middleware/validator.js";</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >const router = express.Router();</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >const validateTweet = [</span>
-<span class="cstat-no" title="statement not covered" >  body("text")</span>
-<span class="cstat-no" title="statement not covered" >    .trim()</span>
-<span class="cstat-no" title="statement not covered" >    .isLength({ min: 3 })</span>
-<span class="cstat-no" title="statement not covered" >    .withMessage("text should be at least 3 characters"),</span>
-<span class="cstat-no" title="statement not covered" >  validate,</span>
-<span class="cstat-no" title="statement not covered" >];</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >//내부적으로 자체적으로 tweetContoller에 대해 의존하는 것이 아니라</span>
-<span class="cstat-no" title="statement not covered" >//외부로부터 주어진 Controller를 이용할거야.</span>
-<span class="cstat-no" title="statement not covered" >//주의, getTweets을 호출하면 getTweet안에서 this 값을 잃어버림</span>
-<span class="cstat-no" title="statement not covered" >//이때 function이 아닌 Arrow Function을 사용해야함. 이유는 자동으로 this가 바인딩됨</span>
-<span class="cstat-no" title="statement not covered" >export default function tweetsRouter(tweetController) {</span>
-<span class="cstat-no" title="statement not covered" >  // GET /tweet</span>
-<span class="cstat-no" title="statement not covered" >  // GET /tweets?username=:username</span>
-<span class="cstat-no" title="statement not covered" >  router.get("/", isAuth, tweetController.getTweets);</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  // GET /tweets/:id</span>
-<span class="cstat-no" title="statement not covered" >  router.get("/:id", isAuth, tweetController.getTweet);</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  // POST /tweeets</span>
-<span class="cstat-no" title="statement not covered" >  router.post("/", isAuth, validateTweet, tweetController.createTweet);</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  // PUT /tweets/:id</span>
-<span class="cstat-no" title="statement not covered" >  router.put("/:id", isAuth, validateTweet, tweetController.updateTweet);</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  // DELETE /tweets/:id</span>
-<span class="cstat-no" title="statement not covered" >  router.delete("/:id", isAuth, tweetController.deleteTweet);</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  return router;</span>
-<span class="cstat-no" title="statement not covered" >}</span>
+<a name='L40'></a><a href='#L40'>40</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import express from "express";
+import "express-async-errors";
+import { body } from "express-validator";
+import { isAuth } from "../middleware/auth.js";
+import { validate } from "../middleware/validator.js";
+&nbsp;
+const router = express.Router();
+&nbsp;
+const validateTweet = [
+  body("text")
+    .trim()
+    .isLength({ min: 3 })
+    .withMessage("text should be at least 3 characters"),
+  validate,
+];
+&nbsp;
+//내부적으로 자체적으로 tweetContoller에 대해 의존하는 것이 아니라
+//외부로부터 주어진 Controller를 이용할거야.
+//주의, getTweets을 호출하면 getTweet안에서 this 값을 잃어버림
+//이때 function이 아닌 Arrow Function을 사용해야함. 이유는 자동으로 this가 바인딩됨
+export default function tweetsRouter(tweetController) {
+  // GET /tweet
+  // GET /tweets?username=:username
+  router.get("/", isAuth, tweetController.getTweets);
+&nbsp;
+  // GET /tweets/:id
+  router.get("/:id", isAuth, tweetController.getTweet);
+&nbsp;
+  // POST /tweeets
+  router.post("/", isAuth, validateTweet, tweetController.createTweet);
+&nbsp;
+  // PUT /tweets/:id
+  router.put("/:id", isAuth, validateTweet, tweetController.updateTweet);
+&nbsp;
+  // DELETE /tweets/:id
+  router.delete("/:id", isAuth, tweetController.deleteTweet);
+&nbsp;
+  return router;
+}
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -187,7 +187,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener">istanbul</a>
-                at Sat Dec 18 2021 14:10:25 GMT+0900 (대한민국 표준시)
+                at Mon Dec 20 2021 15:27:40 GMT+0900 (대한민국 표준시)
             </div>
         </div>
         <script src="../../prettify.js"></script>

@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "cross-env DOTENV_CONFIG_PATH=./.env.test jest --watchAll --verbose",
+    "test": "cross-env DOTENV_CONFIG_PATH=./.env.test jest --watchAll --verbose --testPathPattern=/tests/integration-tests",
     "start": "nodemon index"
   },
   "author": "Dream Coding Academy",
