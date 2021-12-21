@@ -194,7 +194,7 @@ describe("Auth APIs", () => {
     });
   });
 
-  describe("POST to /auth/me", () => {
+  describe("GET to /auth/me", () => {
     it("return 200 when find user", async () => {
       //given
       const fakeUser = faker.helpers.userCard();
@@ -215,7 +215,36 @@ describe("Auth APIs", () => {
       expect(res.status).toBe(200);
     });
   });
+
+  describe("Tweets APIs", () => {
+    describe("POST /tweets", () => {
+      it("returns 201 when create tweet normally", async () => {
+        //given
+        const text = faker.random.words(3);
+        const user = await createNewUserAccount();
+        //action
+        const res = await request.post(
+          '/tweets',
+          { text: text },
+          { headers: { Authorization: `Bearer ${user.jwt}` } }
+        );
+        //then
+        expect(res.status).toBe(201);
+      });
+    });
+  });
+
+  async function createNewUserAccount() {
+    const userDetails = makeValidUserDetails();
+    const prepareUserResponse = await request.post("/auth/signup", userDetails);
+    return {
+      ...userDetails,
+      jwt: prepareUserResponse.data.token,
+    };
+  }
 });
+
+
 
 function makeValidUserDetails() {
   const fakeUser = faker.helpers.userCard();
