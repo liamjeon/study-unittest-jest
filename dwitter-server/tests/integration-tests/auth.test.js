@@ -5,6 +5,7 @@ import axios from "axios";
 import { startServer, stopServer } from "../../app.js";
 import { sequelize } from "../../db/database.js";
 import faker from "faker";
+import { createNewUserAccount, makeValidUserDetails } from "./auth_utils.js";
 
 describe("Auth APIs", () => {
   let server;
@@ -12,7 +13,7 @@ describe("Auth APIs", () => {
   beforeAll(async () => {
     server = await startServer();
     request = axios.create({
-      baseURL: "http://localhost:8080",
+      baseURL: `http://localhost:${server.address().port}`,
       validateStatus: null,
       //axios는 200:성공, 그 이외의 300,400은 에러를 던짐
       //따라서 catch로 따로 처리를해줘야하지만 테스트는 우리가 예상하는 것이기 때문에
@@ -215,43 +216,4 @@ describe("Auth APIs", () => {
       expect(res.status).toBe(200);
     });
   });
-
-  describe("Tweets APIs", () => {
-    describe("POST /tweets", () => {
-      it("returns 201 when create tweet normally", async () => {
-        //given
-        const text = faker.random.words(3);
-        const user = await createNewUserAccount();
-        //action
-        const res = await request.post(
-          '/tweets',
-          { text: text },
-          { headers: { Authorization: `Bearer ${user.jwt}` } }
-        );
-        //then
-        expect(res.status).toBe(201);
-      });
-    });
-  });
-
-  async function createNewUserAccount() {
-    const userDetails = makeValidUserDetails();
-    const prepareUserResponse = await request.post("/auth/signup", userDetails);
-    return {
-      ...userDetails,
-      jwt: prepareUserResponse.data.token,
-    };
-  }
 });
-
-
-
-function makeValidUserDetails() {
-  const fakeUser = faker.helpers.userCard();
-  return {
-    name: fakeUser.name,
-    username: fakeUser.username,
-    email: fakeUser.email,
-    password: faker.internet.password(10, true),
-  };
-}
